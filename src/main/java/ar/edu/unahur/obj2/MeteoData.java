@@ -3,6 +3,15 @@ package ar.edu.unahur.obj2;
 import java.util.Random;
 
 public class MeteoData {
+    display display = new display() {
+        @Override
+        public void actualizar() {
+            getHumedad();
+            getPresion();
+            getTemperatura();
+           // System.out.println(getHumedad()+""+getPresion()+""+getTemperatura());
+        }
+    };
 
     private final EstacionMeteorologica estacionMeteorologica;
 
@@ -28,6 +37,6 @@ public class MeteoData {
      * informacionActualizada
      */
     public void informaciónActualizada() {
-
+        display.actualizar();
     }
 }
